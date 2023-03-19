@@ -1,0 +1,17 @@
+C:\prenos\mcgodot\.godot\mono\temp\bin\Debug\Squash the Creeps (3D).deps.json
+C:\prenos\mcgodot\.godot\mono\temp\bin\Debug\Squash the Creeps (3D).runtimeconfig.json
+C:\prenos\mcgodot\.godot\mono\temp\bin\Debug\Squash the Creeps (3D).dll
+C:\prenos\mcgodot\.godot\mono\temp\bin\Debug\Squash the Creeps (3D).pdb
+C:\prenos\mcgodot\.godot\mono\temp\bin\Debug\GodotSharp.dll
+C:\prenos\mcgodot\.godot\mono\temp\bin\Debug\GodotSharpEditor.dll
+C:\prenos\mcgodot\.godot\mono\temp\obj\Debug\Squash the Creeps (3D).csproj.AssemblyReference.cache
+C:\prenos\mcgodot\.godot\mono\temp\obj\Debug\Squash the Creeps (3D).GeneratedMSBuildEditorConfig.editorconfig
+C:\prenos\mcgodot\.godot\mono\temp\obj\Debug\Squash the Creeps (3D).AssemblyInfoInputs.cache
+C:\prenos\mcgodot\.godot\mono\temp\obj\Debug\Squash the Creeps (3D).AssemblyInfo.cs
+C:\prenos\mcgodot\.godot\mono\temp\obj\Debug\Squash the Creeps (3D).csproj.CoreCompileInputs.cache
+C:\prenos\mcgodot\.godot\mono\temp\obj\Debug\Squash the Creeps (3D).csproj.CopyComplete
+C:\prenos\mcgodot\.godot\mono\temp\obj\Debug\Squash the Creeps (3D).dll
+C:\prenos\mcgodot\.godot\mono\temp\obj\Debug\refint\Squash the Creeps (3D).dll
+C:\prenos\mcgodot\.godot\mono\temp\obj\Debug\Squash the Creeps (3D).pdb
+C:\prenos\mcgodot\.godot\mono\temp\obj\Debug\Squash the Creeps (3D).genruntimeconfig.cache
+C:\prenos\mcgodot\.godot\mono\temp\obj\Debug\ref\Squash the Creeps (3D).dll
