@@ -10,35 +10,11 @@ config_version=5
 
 [application]
 
-<<<<<<< HEAD
-config/name="MCgodot"
+config/name="test terenu2"
 run/main_scene="res://node_3d.tscn"
-config/features=PackedStringArray("4.0", "Forward Plus")
+config/features=PackedStringArray("4.0", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
 [dotnet]
 
-project/assembly_name="MCgodot"
-=======
-config/name="Solar System"
-run/main_scene="res://main.tscn"
-config/features=PackedStringArray("4.0")
-config/icon="res://icon.png"
-
-[autoload]
-
-DDD="*res://addons/zylann.debug_draw/debug_draw.gd"
-
-[dotnet]
-
-project/assembly_name="Solar System"
-
-[editor_plugins]
-
-enabled=PackedStringArray("res://addons/SIsilicon.vfx.lens flare/plugin.cfg", "res://addons/interpolated_camera_3d/plugin.cfg", "res://addons/zylann.collision_scanner/plugin.cfg")
-
-[rendering]
-
-environment/default_clear_color=Color(0, 0, 0, 1)
-environment/default_environment="res://default_env.tres"
->>>>>>> 24bf3e7770ae90b24042d5cfbda5822e1bf2e90a
+project/assembly_name="test terenu2"

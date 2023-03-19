@@ -1,7 +1,2 @@
-<<<<<<< HEAD
 # Godot 4+ specific ignores
 .godot/
-=======
-.godot/
-debug_data/*
->>>>>>> 24bf3e7770ae90b24042d5cfbda5822e1bf2e90a
