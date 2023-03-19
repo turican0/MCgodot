@@ -1,22 +1,39 @@
-[gd_scene load_steps=3 format=3 uid="uid://bxcat243ubn07"]
+[gd_scene load_steps=6 format=3 uid="uid://bdmn3ik51r4r4"]
 
-[ext_resource type="Script" path="res://MeshInstance3D.cs" id="1_qfb4p"]
+[ext_resource type="Script" path="res://node_3d.cs" id="1_njy7f"]
+[ext_resource type="PackedScene" uid="uid://b14sx6y7k4x37" path="res://art/player.glb" id="1_xpotf"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_878fu"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_4wxsu"]
+size = Vector3(60, 2, 60)
+
+[sub_resource type="BoxMesh" id="BoxMesh_hwasq"]
+size = Vector3(60, 2, 60)
+
+[sub_resource type="BoxMesh" id="BoxMesh_2g1cg"]
 
 [node name="Node3D" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.41264, 3.25625, -15.5957)
+script = ExtResource("1_njy7f")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-script = ExtResource("1_qfb4p")
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3, 0)
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-mesh = SubResource("BoxMesh_878fu")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_4wxsu")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("BoxMesh_hwasq")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.847625, 0, 1.77252)
-visible = false
-
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 30.6575, 0)
+shadow_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.32391)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.75821, 5.37652)
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="player" parent="Node3D" instance=ExtResource("1_xpotf")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_2g1cg")

@@ -10,11 +10,16 @@ config_version=5
 
 [application]
 
-config/name="test terenu2"
+config/name="Squash the Creeps (3D)"
 run/main_scene="res://node_3d.tscn"
-config/features=PackedStringArray("4.0", "C#", "Forward Plus")
-config/icon="res://icon.svg"
+config/features=PackedStringArray("4.0", "C#")
+config/icon="res://icon.png"
 
 [dotnet]
 
-project/assembly_name="test terenu2"
+project/assembly_name="Squash the Creeps (3D)"
+
+[rendering]
+
+quality/driver/driver_name="GLES2"
+quality/filters/msaa=3

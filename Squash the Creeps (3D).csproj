@@ -2,6 +2,6 @@
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <EnableDynamicLoading>true</EnableDynamicLoading>
-    <RootNamespace>testterenu2</RootNamespace>
+    <RootNamespace>SquashtheCreeps3D</RootNamespace>
   </PropertyGroup>
 </Project>
