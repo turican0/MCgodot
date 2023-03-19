@@ -2,21 +2,36 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
+uid="uid://c8gd7onearkul"
+path="res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.ctex"
+metadata={
+"vram_texture": false
+=======
 uid="uid://dm3bbvi83yu4e"
 path.s3tc="res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
+>>>>>>> 24bf3e7770ae90b24042d5cfbda5822e1bf2e90a
 }
 
 [deps]
 
 source_file="res://icon.png"
+<<<<<<< HEAD
+dest_files=["res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.ctex"]
+
+[params]
+
+compress/mode=0
+=======
 dest_files=["res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.s3tc.ctex"]
 
 [params]
 
 compress/mode=2
+>>>>>>> 24bf3e7770ae90b24042d5cfbda5822e1bf2e90a
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

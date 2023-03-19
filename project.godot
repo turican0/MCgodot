@@ -10,6 +10,16 @@ config_version=5
 
 [application]
 
+<<<<<<< HEAD
+config/name="MCgodot"
+run/main_scene="res://node_3d.tscn"
+config/features=PackedStringArray("4.0", "Forward Plus")
+config/icon="res://icon.svg"
+
+[dotnet]
+
+project/assembly_name="MCgodot"
+=======
 config/name="Solar System"
 run/main_scene="res://main.tscn"
 config/features=PackedStringArray("4.0")
@@ -31,3 +41,4 @@ enabled=PackedStringArray("res://addons/SIsilicon.vfx.lens flare/plugin.cfg", "r
 
 environment/default_clear_color=Color(0, 0, 0, 1)
 environment/default_environment="res://default_env.tres"
+>>>>>>> 24bf3e7770ae90b24042d5cfbda5822e1bf2e90a
