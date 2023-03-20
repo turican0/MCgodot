@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\prenos\\mcgodot\\Squash the Creeps (3D).csproj": {}
+    "C:\\PRENOS\\MCGODOT\\Squash the Creeps (3D).csproj": {}
   },
   "projects": {
-    "c:\\prenos\\mcgodot\\Squash the Creeps (3D).csproj": {
+    "C:\\PRENOS\\MCGODOT\\Squash the Creeps (3D).csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\prenos\\mcgodot\\Squash the Creeps (3D).csproj",
+        "projectUniqueName": "C:\\PRENOS\\MCGODOT\\Squash the Creeps (3D).csproj",
         "projectName": "Squash the Creeps (3D)",
-        "projectPath": "c:\\prenos\\mcgodot\\Squash the Creeps (3D).csproj",
+        "projectPath": "C:\\PRENOS\\MCGODOT\\Squash the Creeps (3D).csproj",
         "packagesPath": "C:\\Users\\tomas.vesely\\.nuget\\packages\\",
-        "outputPath": "c:\\prenos\\mcgodot\\.godot\\mono\\temp\\obj\\",
+        "outputPath": "C:\\PRENOS\\MCGODOT\\.godot\\mono\\temp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Users\\tomas.vesely\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder",

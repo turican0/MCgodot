@@ -44,10 +44,11 @@ public partial class MeshInstance3D2 : MeshInstance3D
         int indexColor = Mathf.Clamp(Mathf.RoundToInt(Mathf.Lerp(0, colorsCount - 1, value)), 0, colorsCount - 1);
 
         return heightsColors[indexColor];
-    }
+    }    
 
     private void gen_mesh()
     {
+        var rand = new Random();
         ArrayMesh a_mesh = new ArrayMesh();
 
         SurfaceTool st = new SurfaceTool();
@@ -78,14 +79,38 @@ public partial class MeshInstance3D2 : MeshInstance3D
         //PhysicsRayQueryParameters3D p = new PhysicsRayQueryParameters3D();
         //var result = spaceState.IntersectRay(p);
 
-        Vector3 v1 = new Vector3(0, 0, 0);
-        Vector3 v2 = new Vector3(1, 0, 0);
-        Vector3 v3 = new Vector3(1, 0, 1);
-
         a_mesh.ClearSurfaces();
         st.Clear();
 
         st.Begin(Mesh.PrimitiveType.Triangles);
+
+        float[,] floatArray = new float[5,5];
+
+        for (int i = 0; i < 5; i++)
+            for (int j = 0; j < 5; j++)
+                floatArray[i, j] = (float)rand.NextDouble();
+
+        for (int i = 0; i < 5 - 1; i++)
+            for (int j = 0; j < 5 - 1; j++)
+            {
+                Vector3 v1x = new Vector3(i+0, floatArray[i + 0, j + 0], j+0);
+                Vector3 v2x = new Vector3(i+1, floatArray[i + 1, j + 0], j+0);
+                Vector3 v3x = new Vector3(i+1, floatArray[i + 1, j + 1], j+1);
+
+                st.SetUV(new Vector2(0, 0));
+                st.AddVertex(v1x);
+
+                st.SetUV(new Vector2(0, 1));
+                st.AddVertex(v2x);
+
+                st.SetUV(new Vector2(1, 1));
+                st.AddVertex(v3x);
+            }
+            
+        //begin
+        Vector3 v1 = new Vector3(0, 0, 0);
+        Vector3 v2 = new Vector3(1, 0, 0);
+        Vector3 v3 = new Vector3(1, 0, 1);
         
         st.SetUV(new Vector2(0, 0));
         st.AddVertex(v1);
@@ -95,8 +120,16 @@ public partial class MeshInstance3D2 : MeshInstance3D
 
         st.SetUV(new Vector2(1, 1));
         st.AddVertex(v3);
+        //end
 
         st.Commit(a_mesh);
+
+        //add texture
+        //Texture2D icon = (Texture2D)ResourceLoader.Load("res://icon.png");
+        Texture2D icon = ResourceLoader.Load("res://icon.png") as Texture2D;
+        var material = new StandardMaterial3D();
+        material.AlbedoTexture = icon;
+        a_mesh.SurfaceSetMaterial(0, material);
 
         this.Mesh = a_mesh;
     }

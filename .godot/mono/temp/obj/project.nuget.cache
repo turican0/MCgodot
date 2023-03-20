@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "gqHWW1HakRSAIQLGSbZkZYccDlq8DVauTL9E77Whnip84qJROaU7TEqVmze8enyBUiqyMue9vkVe/b/lm8HpOg==",
+  "dgSpecHash": "XHLHIxrvqiHq047AR8hPZHFTTnCE+rgynaX3y7rNkLFVJYIMeBPBxPWK4BtISCFD+Mh4bW4cCmE5hC37hY8XCg==",
   "success": true,
-  "projectFilePath": "c:\\prenos\\mcgodot\\Squash the Creeps (3D).csproj",
+  "projectFilePath": "C:\\PRENOS\\MCGODOT\\Squash the Creeps (3D).csproj",
   "expectedPackageFiles": [
     "C:\\Users\\tomas.vesely\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder\\godot.sourcegenerators\\4.0.0\\godot.sourcegenerators.4.0.0.nupkg.sha512",
     "C:\\Users\\tomas.vesely\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder\\godotsharp\\4.0.0\\godotsharp.4.0.0.nupkg.sha512",
