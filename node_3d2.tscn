@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dhh8htdc2ax51"]
+
+[ext_resource type="Script" path="res://node_3d.cs" id="1_n864m"]
+[ext_resource type="Script" path="res://MeshInstance3D2.cs" id="3_ce2lg"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_2a13s"]
+
+[node name="Node3D" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.41264, 3.25625, -15.5957)
+script = ExtResource("1_n864m")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 30.6575, 0)
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.75821, 5.37652)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+mesh = SubResource("ArrayMesh_2a13s")
+script = ExtResource("3_ce2lg")

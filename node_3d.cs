@@ -36,7 +36,7 @@ public partial class node_3d : Node3D
         Node3D sceneInst2 = (Node3D)scene2.Instantiate();
         testObject2.AddChild(sceneInst2);
         AddChild(testObject2);
-
+        /*
         var surfaceArray = new Godot.Collections.Array();
         surfaceArray.Resize((int)ArrayMesh.ArrayType.Max);
 
@@ -100,6 +100,7 @@ public partial class node_3d : Node3D
 
         var arrayMesh = new ArrayMesh();
         arrayMesh.AddSurfaceFromArrays(Mesh.PrimitiveType.Triangles, surfaceArray);
+        */
         //Mesh = arrayMesh;
         /*
         //var customMesh = new GeneratedMesh();
@@ -130,11 +131,13 @@ public partial class node_3d : Node3D
         arrayMesh.AddSurfaceFromArrays(Mesh.PrimitiveType.Triangles, surfaceArray);
         Mesh = arrayMesh;*/
 
+        /*
         var customMesh = new MeshInstance3D();
         customMesh.Name = "testMesh";
         customMesh.Mesh = arrayMesh;
         //customMesh.Mesh = new BoxMesh();
         AddChild(customMesh);
+        */
     }
 
     // Called every frame. 'delta' is the elapsed time since the previous frame.

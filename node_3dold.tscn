@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bdmn3ik51r4r4"]
+[gd_scene load_steps=9 format=3 uid="uid://2p4bsu678qbt"]
 
-[ext_resource type="Script" path="res://node_3d.cs" id="1_njy7f"]
-[ext_resource type="PackedScene" uid="uid://b14sx6y7k4x37" path="res://art/player.glb" id="1_xpotf"]
+[ext_resource type="Script" path="res://node_3d.cs" id="1_elloj"]
+[ext_resource type="PackedScene" uid="uid://b14sx6y7k4x37" path="res://art/player.glb" id="2_gcx0j"]
+[ext_resource type="Script" path="res://MeshInstance3D2.cs" id="3_cosrc"]
+[ext_resource type="Script" path="res://MeshInstance3D3.gd" id="4_mprqj"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4wxsu"]
 size = Vector3(60, 2, 60)
@@ -11,9 +13,11 @@ size = Vector3(60, 2, 60)
 
 [sub_resource type="BoxMesh" id="BoxMesh_2g1cg"]
 
+[sub_resource type="ArrayMesh" id="ArrayMesh_2a13s"]
+
 [node name="Node3D" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.41264, 3.25625, -15.5957)
-script = ExtResource("1_njy7f")
+script = ExtResource("1_elloj")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3, 0)
@@ -33,7 +37,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.75821, 5.37652)
 
 [node name="Node3D" type="Node3D" parent="."]
 
-[node name="player" parent="Node3D" instance=ExtResource("1_xpotf")]
+[node name="player" parent="Node3D" instance=ExtResource("2_gcx0j")]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_2g1cg")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+mesh = SubResource("ArrayMesh_2a13s")
+script = ExtResource("3_cosrc")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+script = ExtResource("4_mprqj")
