@@ -38,23 +38,23 @@ public partial class MeshInstance3D2 : MeshInstance3D
         [FieldOffset(0)]
         public ushort word;
     }
-    struct Type_BegBscreen
+    struct type_E9C38_smalltit
     {
         public int x_0;
-        public int var_4;
-        public int var_8;
+        public int alt_4;
+        public int alt2_8;
         public int y_12;
         public int pnt1_16;
         public int pnt2_20;
         public int pnt3_24;
         public int pnt4_28;
         public int pnt5_32;
-        public ushort haveSprite_36;
-        public uaxis_2d triangleDir_38;
-        public byte[] stubc;
-        public byte haveTexture_41;
-        public byte var_42;
-        public byte var_43;
+        public short haveBillboard_36;
+        public ushort triangleFeatures_38;
+        public sbyte var_40;
+        public byte textIndex_41;
+        public sbyte textUV_42;
+        public bool textAtyp_43;
     };
 
     uint[] sin_90B4C = new uint[(256 + 256 + 256 + 256) * 2] {
@@ -1110,22 +1110,66 @@ public partial class MeshInstance3D2 : MeshInstance3D
 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,//160
 0x00, 0x00, 0x00, 0x00};
 
+    struct type_F2C20ar
+    {
+        public int dword0x00;
+        public int dword0x01_rotIdx;
+        //public int* dword0x02_data; //fix
+        public int dword0x03_screenX;
+        public int dword0x04_screenY;
+        public int dword0x05;
+        public int dword0x06_height;
+        public int dword0x07;
+        public int dword0x08_width;
+        public int dword0x09_realWidth;
+        public int dword0x0a_actIdx;
+        public int dword0x0b;
+        public int dword0x0c_realHeight;
+        public int sin_0x0d;
+        public int dword0x0e_ptrScreenRenderBufferStart;
+        public int dword0x0f;
+        public int dword0x10;
+        public int cos_0x11;
+        public int dword0x12;
+        public int dword0x13;
+        //public type_event_0x6E8E* dword0x14x;//fix
+        public int dword0x15;
+        public int dword0x16;
+        public int dword0x17;
+        public int dword0x18;
+        public int Height_0x19;
+        //public byte* pbyte0x1a;//fix
+        public int dword0x1b;
+        public int dword0x1c;
+        public int dword0x1d;
+        public int dword0x1e;
+        public int dword0x1f;
+        public int dword0x20;
+        public int dword0x21;
+        public int dword0x22;
+        public int dword0x23;
+        public int dword0x24;
+        public int width0x25;
+        public int height0x26;
+        public int dword0x27;
+    }
+
 
 
     public override void _Ready()
-	{
-		gen_mesh();
-	}
+    {
+        gen_mesh();
+    }
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
-		if (update)
-		{
-			gen_mesh();
-			update = true;
-		}
-	}
+    // Called every frame. 'delta' is the elapsed time since the previous frame.
+    public override void _Process(double delta)
+    {
+        if (update)
+        {
+            gen_mesh();
+            update = true;
+        }
+    }
 
     private Color heightToColor(float height)
     {
@@ -1183,27 +1227,31 @@ public partial class MeshInstance3D2 : MeshInstance3D
 
 
 
-        Type_BegBscreen[] tempBegBscreen = new Type_BegBscreen[textColumns * textRows];
-        Byte[,] mapHeightmap_DC1E0_DC1D0 = new Byte[0x100,0x100];
+        type_E9C38_smalltit[] Str_E9C38_smalltit = new type_E9C38_smalltit[textColumns * textRows];
+        Byte[,] mapHeightmap_11B4E0 = new Byte[0x100, 0x100];
         Byte[] mapAngle_FC1E0_FC1D0 = new Byte[0x10000]; // weak
         Byte[] mapShading_EC1E0_EC1D0 = new Byte[0x10000]; // weak
         Byte[] mapTerrainType_CC1E0_CC1D0 = new Byte[0x10000]; // 0x28A1E0_
         short[] mapEntityIndex_10C1E0_10C1D0 = new short[0x10000]; // weak
 
+        type_F2C20ar str_F2C20ar;
+        str_F2C20ar.dword0x15 = 0;//fix
+        str_F2C20ar.dword0x18 = 0;//fix
+
         for (int i = 0; i < textColumns; i++)
             for (int j = 0; j < textRows; j++)
-                mapHeightmap_DC1E0_DC1D0[i, j] = (Byte)(rand.NextDouble()*0x100);
+                mapHeightmap_11B4E0[i, j] = (Byte)(rand.NextDouble() * 0x100);
 
         int index = 0;
-        int dword_B5D00_B5CF0 = 0;//fix it
-        int fowDist_B5D14_B5D04 = 0;//fix it
+        //int dword_B5D00_B5CF0 = 0;//fix it
+        //int fowDist_B5D14_B5D04 = 0;//fix it
         int dword_B5CF0_B5CE0 = 0;//fix it
         int dword_B5D0C_B5CFC = 0;//fix it
         int dword_B5CFC_B5CEC = 0;//fix it
         int dword_B5CEC_B5CDC = 0;//fix it
         uaxis_2d yawXY;
         yawXY.word = 0;//fix
-        byte[,] yawQuartal_902B4 = new byte[4, 10] {
+        byte[,] yawQuartal_D4328 = new byte[4, 10] {
             { 0xED, 0x01, 0x00, 0x00, 0x00, 0xFF, 0xD8, 0xFF, 0x01, 0x00 },
             { 0x00, 0xED, 0xFF, 0x00, 0x01, 0x00, 0x01, 0xD8, 0x00, 0x01 },
             { 0x13, 0x00, 0xFF, 0xFF, 0x00, 0x01, 0x28, 0x01, 0xFF, 0x00 },
@@ -1216,7 +1264,7 @@ public partial class MeshInstance3D2 : MeshInstance3D
         byte[] yawQuartal = new byte[10];
         for (int i = 0; i < 10; i++)
         {
-            yawQuartal[i] = yawQuartal_902B4[modYaw, i];
+            yawQuartal[i] = yawQuartal_D4328[modYaw, i];
         }
 
         int posX = 0;//fix it
@@ -1246,60 +1294,60 @@ public partial class MeshInstance3D2 : MeshInstance3D
             for (int j = 0; j < textRows - 1; j++)
             {
                 //for (v238 = textColumns; v238; v238--)
-                    //for (v243 = textRows; v243; v243--)
-                    //{
-                    //for (v243 = textRows; v243; v243--)
-                    //{
-                        int powX = (int)Math.Pow(tempBegBscreen[index].x_0, 2);
-                        int tempY = tempBegBscreen[index].y_12;
-                        int powY = (int)Math.Pow(tempY, 2);
-                        tempBegBscreen[index].haveSprite_36 = 0;
-                        if (tempY > -256 && powY + powX < dword_B5D00_B5CF0)
-                        {
-                            if (tempY < 128)
-                                tempY = 128;
-                            tempBegBscreen[index].pnt1_16 = fowDist_B5D14_B5D04 * tempBegBscreen[index].x_0 / tempY;
-                            tempBegBscreen[index].var_4 = 32 * mapHeightmap_DC1E0_DC1D0[yawXY._axis_2d.y, yawXY._axis_2d.x] - posZ;
-                            tempSinDiaY = (int)sin_90B4C[((str_AE400_AE3F0_str_13323_str_AE400_AE3F0_var_u16_8_var_u32_13341_18 << 6) + (yawXY._axis_2d.y << 7)) & 0x7FF] >> 8;
-                            int tempSinXSin = (int)Math.Pow(tempSinDiaY, 2);
-                            if ((mapAngle_FC1E0_FC1D0[yawXY.word] & 8) != 0)
-                                tempBegBscreen[index].var_4 -= tempSinXSin >> 10;
-                            else
-                                tempSinXSin = 0;
-                            int tempVar32 = (((mapShading_EC1E0_EC1D0[yawXY.word] << 8) + 128) << 8) + 8 * tempSinXSin;
-                            if (powY + powX > dword_B5CF0_B5CE0)
-                            {
-                                if (powY + powX >= dword_B5D0C_B5CFC)
-                                    tempBegBscreen[index].pnt5_32 = 0;
-                                else
-                                    tempBegBscreen[index].pnt5_32 = tempVar32 * /*(__int64)*/(dword_B5D0C_B5CFC - (powY + powX)) / dword_B5CEC_B5CDC;
-                            }
-                            else
-                                tempBegBscreen[index].pnt5_32 = tempVar32;
-                            tempBegBscreen[index].pnt2_20 = dword_B5CFC_B5CEC + fowDist_B5D14_B5D04 * tempBegBscreen[index].var_4 / tempY;
-                            uaxis_2d tempYawXY = yawXY;
-                            tempYawXY._axis_2d.x += yawQuartal[2];
-                            tempYawXY._axis_2d.y += yawQuartal[3];
-                            tempBegBscreen[index].haveTexture_41 = mapTerrainType_CC1E0_CC1D0[tempYawXY.word];
-                            tempBegBscreen[index].var_43 = byte_900C4[tempBegBscreen[index].haveTexture_41];
-                            tempBegBscreen[index].var_42 = (byte)(modYaw + ((mapAngle_FC1E0_FC1D0[tempYawXY.word] >> 2) & 0x1C));
-                            tempYawXY._axis_2d.x += yawQuartal[4];
-                            tempYawXY._axis_2d.y += yawQuartal[5];
-                            tempBegBscreen[index].haveSprite_36 = (ushort)mapEntityIndex_10C1E0_10C1D0[tempYawXY.word];
-                        }
+                //for (v243 = textRows; v243; v243--)
+                //{
+                //for (v243 = textRows; v243; v243--)
+                //{
+                int powX = (int)Math.Pow(Str_E9C38_smalltit[index].x_0, 2);
+                int tempY = Str_E9C38_smalltit[index].y_12;
+                int powY = (int)Math.Pow(tempY, 2);
+                Str_E9C38_smalltit[index].haveBillboard_36 = 0;
+                if (tempY > -256 && powY + powX < str_F2C20ar.dword0x15)
+                {
+                    if (tempY < 128)
+                        tempY = 128;
+                    Str_E9C38_smalltit[index].pnt1_16 = str_F2C20ar.dword0x18 * Str_E9C38_smalltit[index].x_0 / tempY;
+                    Str_E9C38_smalltit[index].alt_4 = 32 * mapHeightmap_11B4E0[yawXY._axis_2d.y, yawXY._axis_2d.x] - posZ;
+                    tempSinDiaY = (int)sin_90B4C[((str_AE400_AE3F0_str_13323_str_AE400_AE3F0_var_u16_8_var_u32_13341_18 << 6) + (yawXY._axis_2d.y << 7)) & 0x7FF] >> 8;
+                    int tempSinXSin = (int)Math.Pow(tempSinDiaY, 2);
+                    if ((mapAngle_FC1E0_FC1D0[yawXY.word] & 8) != 0)
+                        Str_E9C38_smalltit[index].alt_4 -= tempSinXSin >> 10;
+                    else
+                        tempSinXSin = 0;
+                    int tempVar32 = (((mapShading_EC1E0_EC1D0[yawXY.word] << 8) + 128) << 8) + 8 * tempSinXSin;
+                    if (powY + powX > dword_B5CF0_B5CE0)
+                    {
+                        if (powY + powX >= dword_B5D0C_B5CFC)
+                            Str_E9C38_smalltit[index].pnt5_32 = 0;
                         else
-                            tempBegBscreen[index].triangleDir_38._axis_2d.x |= (byte)2u;
-                        tempBegBscreen[index].triangleDir_38.word |= (ushort)((yawXY._axis_2d.x + yawXY._axis_2d.y) & 1);
-                        yawXY._axis_2d.x += yawQuartal[8];
-                        yawXY._axis_2d.y += yawQuartal[9];
+                            Str_E9C38_smalltit[index].pnt5_32 = tempVar32 * /*(__int64)*/(dword_B5D0C_B5CFC - (powY + powX)) / dword_B5CEC_B5CDC;
+                    }
+                    else
+                        Str_E9C38_smalltit[index].pnt5_32 = tempVar32;
+                    Str_E9C38_smalltit[index].pnt2_20 = dword_B5CFC_B5CEC + str_F2C20ar.dword0x18 * Str_E9C38_smalltit[index].alt_4 / tempY;
+                    uaxis_2d tempYawXY = yawXY;
+                    tempYawXY._axis_2d.x += yawQuartal[2];
+                    tempYawXY._axis_2d.y += yawQuartal[3];
+                    Str_E9C38_smalltit[index].textIndex_41 = mapTerrainType_CC1E0_CC1D0[tempYawXY.word];
+                    Str_E9C38_smalltit[index].textAtyp_43 = byte_900C4[Str_E9C38_smalltit[index].textIndex_41] != 0;
+                    Str_E9C38_smalltit[index].textUV_42 = (sbyte)(modYaw + ((mapAngle_FC1E0_FC1D0[tempYawXY.word] >> 2) & 0x1C));
+                    tempYawXY._axis_2d.x += yawQuartal[4];
+                    tempYawXY._axis_2d.y += yawQuartal[5];
+                    Str_E9C38_smalltit[index].haveBillboard_36 = (short)mapEntityIndex_10C1E0_10C1D0[tempYawXY.word];
+                }
+                else
+                    Str_E9C38_smalltit[index].triangleFeatures_38 |= 0x2;
+                Str_E9C38_smalltit[index].triangleFeatures_38 |= (ushort)((yawXY._axis_2d.x + yawXY._axis_2d.y) & 1);
+                yawXY._axis_2d.x += yawQuartal[8];
+                yawXY._axis_2d.y += yawQuartal[9];
                 //}
                 //}
 
-                if ((tempBegBscreen[index].triangleDir_38.word & 1) == 0)
+                if ((Str_E9C38_smalltit[index].triangleFeatures_38 & 1) == 0)
                 {
-                    Vector3 v1x = new Vector3(i + 0, 0.003f * mapHeightmap_DC1E0_DC1D0[i + 0, j + 0], j + 0);
-                    Vector3 v2x = new Vector3(i + 1, 0.003f * mapHeightmap_DC1E0_DC1D0[i + 1, j + 0], j + 0);
-                    Vector3 v3x = new Vector3(i + 1, 0.003f * mapHeightmap_DC1E0_DC1D0[i + 1, j + 1], j + 1);
+                    Vector3 v1x = new Vector3(i + 0, 0.003f * mapHeightmap_11B4E0[i + 0, j + 0], j + 0);
+                    Vector3 v2x = new Vector3(i + 1, 0.003f * mapHeightmap_11B4E0[i + 1, j + 0], j + 0);
+                    Vector3 v3x = new Vector3(i + 1, 0.003f * mapHeightmap_11B4E0[i + 1, j + 1], j + 1);
 
                     st.SetUV(new Vector2(0, 0));
                     st.AddVertex(v1x);
@@ -1310,9 +1358,9 @@ public partial class MeshInstance3D2 : MeshInstance3D
                     st.SetUV(new Vector2(1, 1));
                     st.AddVertex(v3x);
 
-                    Vector3 v1y = new Vector3(i + 0, 0.003f * mapHeightmap_DC1E0_DC1D0[i + 0, j + 0], j + 0);
-                    Vector3 v2y = new Vector3(i + 1, 0.003f * mapHeightmap_DC1E0_DC1D0[i + 1, j + 1], j + 1);
-                    Vector3 v3y = new Vector3(i + 0, 0.003f * mapHeightmap_DC1E0_DC1D0[i + 0, j + 1], j + 1);
+                    Vector3 v1y = new Vector3(i + 0, 0.003f * mapHeightmap_11B4E0[i + 0, j + 0], j + 0);
+                    Vector3 v2y = new Vector3(i + 1, 0.003f * mapHeightmap_11B4E0[i + 1, j + 1], j + 1);
+                    Vector3 v3y = new Vector3(i + 0, 0.003f * mapHeightmap_11B4E0[i + 0, j + 1], j + 1);
 
                     st.SetUV(new Vector2(0, 0));
                     st.AddVertex(v1y);
@@ -1325,9 +1373,9 @@ public partial class MeshInstance3D2 : MeshInstance3D
                 }
                 else
                 {
-                    Vector3 v1x = new Vector3(i + 1, 0.003f * mapHeightmap_DC1E0_DC1D0[i + 1, j + 0], j + 0);
-                    Vector3 v2x = new Vector3(i + 0, 0.003f * mapHeightmap_DC1E0_DC1D0[i + 0, j + 1], j + 1);
-                    Vector3 v3x = new Vector3(i + 0, 0.003f * mapHeightmap_DC1E0_DC1D0[i + 0, j + 0], j + 0);
+                    Vector3 v1x = new Vector3(i + 1, 0.003f * mapHeightmap_11B4E0[i + 1, j + 0], j + 0);
+                    Vector3 v2x = new Vector3(i + 0, 0.003f * mapHeightmap_11B4E0[i + 0, j + 1], j + 1);
+                    Vector3 v3x = new Vector3(i + 0, 0.003f * mapHeightmap_11B4E0[i + 0, j + 0], j + 0);
 
                     st.SetUV(new Vector2(1, 0));
                     st.AddVertex(v1x);
@@ -1338,9 +1386,9 @@ public partial class MeshInstance3D2 : MeshInstance3D
                     st.SetUV(new Vector2(0, 0));
                     st.AddVertex(v3x);
 
-                    Vector3 v1y = new Vector3(i + 1, 0.003f * mapHeightmap_DC1E0_DC1D0[i + 1, j + 0], j + 0);
-                    Vector3 v2y = new Vector3(i + 1, 0.003f * mapHeightmap_DC1E0_DC1D0[i + 1, j + 1], j + 1);
-                    Vector3 v3y = new Vector3(i + 0, 0.003f * mapHeightmap_DC1E0_DC1D0[i + 0, j + 1], j + 1);
+                    Vector3 v1y = new Vector3(i + 1, 0.003f * mapHeightmap_11B4E0[i + 1, j + 0], j + 0);
+                    Vector3 v2y = new Vector3(i + 1, 0.003f * mapHeightmap_11B4E0[i + 1, j + 1], j + 1);
+                    Vector3 v3y = new Vector3(i + 0, 0.003f * mapHeightmap_11B4E0[i + 0, j + 1], j + 1);
 
                     st.SetUV(new Vector2(1, 0));
                     st.AddVertex(v1y);
@@ -1356,12 +1404,12 @@ public partial class MeshInstance3D2 : MeshInstance3D
             yawXY._axis_2d.x += yawQuartal[6];
             yawXY._axis_2d.y += yawQuartal[7];
         }
-            
+
         //begin
         Vector3 v1 = new Vector3(0, 0, 0);
         Vector3 v2 = new Vector3(1, 0, 0);
         Vector3 v3 = new Vector3(1, 0, 1);
-        
+
         st.SetUV(new Vector2(0, 0));
         st.AddVertex(v1);
 

@@ -85,26 +85,26 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\tomas.vesely\\.nuget\\packages\\": {},
-    "C:\\Users\\tomas.vesely\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder": {},
+    "C:\\Users\\Veselý\\.nuget\\packages\\": {},
+    "C:\\Users\\Veselý\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\PRENOS\\MCGODOT\\Squash the Creeps (3D).csproj",
+      "projectUniqueName": "C:\\prenos\\mcgodot\\Squash the Creeps (3D).csproj",
       "projectName": "Squash the Creeps (3D)",
-      "projectPath": "C:\\PRENOS\\MCGODOT\\Squash the Creeps (3D).csproj",
-      "packagesPath": "C:\\Users\\tomas.vesely\\.nuget\\packages\\",
-      "outputPath": "C:\\PRENOS\\MCGODOT\\.godot\\mono\\temp\\obj\\",
+      "projectPath": "C:\\prenos\\mcgodot\\Squash the Creeps (3D).csproj",
+      "packagesPath": "C:\\Users\\Veselý\\.nuget\\packages\\",
+      "outputPath": "C:\\prenos\\mcgodot\\.godot\\mono\\temp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Users\\tomas.vesely\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder",
+        "C:\\Users\\Veselý\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\tomas.vesely\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Users\\tomas.vesely\\AppData\\Roaming\\NuGet\\config\\Godot.Offline.Config",
+        "C:\\Users\\Veselý\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Veselý\\AppData\\Roaming\\NuGet\\config\\Godot.Offline.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -159,7 +159,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }
