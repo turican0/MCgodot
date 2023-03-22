@@ -4,6 +4,7 @@ using System.Reflection;
 using static MeshInstance3D2;
 using System.Runtime.InteropServices;
 
+[Tool]
 public partial class MeshInstance3D2 : MeshInstance3D
 {
     // Called when the node enters the scene tree for the first time.
@@ -1365,10 +1366,10 @@ public partial class MeshInstance3D2 : MeshInstance3D
                     st.SetUV(new Vector2(0, 0));
                     st.AddVertex(v1y);
 
-                    st.SetUV(new Vector2(1, 1));
+                    st.SetUV(new Vector2(0.1f, 0.1f));
                     st.AddVertex(v2y);
 
-                    st.SetUV(new Vector2(0, 1));
+                    st.SetUV(new Vector2(0, 0.1f));
                     st.AddVertex(v3y);
                 }
                 else
@@ -1377,10 +1378,10 @@ public partial class MeshInstance3D2 : MeshInstance3D
                     Vector3 v2x = new Vector3(i + 0, 0.003f * mapHeightmap_11B4E0[i + 0, j + 1], j + 1);
                     Vector3 v3x = new Vector3(i + 0, 0.003f * mapHeightmap_11B4E0[i + 0, j + 0], j + 0);
 
-                    st.SetUV(new Vector2(1, 0));
+                    st.SetUV(new Vector2(0.1f, 0));
                     st.AddVertex(v1x);
 
-                    st.SetUV(new Vector2(0, 1));
+                    st.SetUV(new Vector2(0, 0.1f));
                     st.AddVertex(v2x);
 
                     st.SetUV(new Vector2(0, 0));
@@ -1424,7 +1425,8 @@ public partial class MeshInstance3D2 : MeshInstance3D
 
         //add texture
         //Texture2D icon = (Texture2D)ResourceLoader.Load("res://icon.png");
-        Texture2D icon = ResourceLoader.Load("res://icon.png") as Texture2D;
+        //Texture2D icon = ResourceLoader.Load("res://icon.png") as Texture2D;
+        Texture2D icon = ResourceLoader.Load("res://art/bl32c0-0.png") as Texture2D;
         var material = new StandardMaterial3D();
         material.AlbedoTexture = icon;
         a_mesh.SurfaceSetMaterial(0, material);

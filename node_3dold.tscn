@@ -16,8 +16,11 @@ size = Vector3(60, 2, 60)
 [sub_resource type="ArrayMesh" id="ArrayMesh_2a13s"]
 
 [node name="Node3D" type="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.41264, 3.25625, -15.5957)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.41264, 4.25625, -15.5957)
 script = ExtResource("1_elloj")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.44933, 2.20116, 2.48044)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3, 0)

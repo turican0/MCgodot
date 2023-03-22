@@ -8,6 +8,8 @@ using System.Text.RegularExpressions;
 //https://www.youtube.com/watch?v=OtfxxY4AeVQ
 //https://www.youtube.com/watch?v=8wy_dH9RLI4
 //https://www.youtube.com/watch?v=EEo5cuwjYhA
+
+[Tool]
 public partial class node_3d : Node3D
 {
     private int _rings = 50;
