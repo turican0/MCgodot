@@ -1,2 +1,4 @@
 res://node_3d2.tscn
-res://node_3dold.tscn
+res://Camera3D.cs
+res://MeshInstance3D2.cs
+res://node_3d.cs

@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "lR7OiqV+5BWUZYGx2NcH0WN8MGtUnDEmRuDux+8thOvKZrltlzkkgL95n1n8duFhM8Ib8eEfhhSwwalcYkGNCA==",
+  "dgSpecHash": "P2UQrNXSmoQnd02rUPWfbIlZcyoBJL5SbpVTZxC5FtVdxZaBFMoVfyyuD/qJOmA+QJNQjmIriI2yBUU7tV4sdg==",
   "success": true,
-  "projectFilePath": "C:\\prenos\\mcgodot\\Squash the Creeps (3D).csproj",
+  "projectFilePath": "C:\\PRENOS\\MCGODOT\\Squash the Creeps (3D).csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Veselý\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder\\godot.sourcegenerators\\4.0.0\\godot.sourcegenerators.4.0.0.nupkg.sha512",
-    "C:\\Users\\Veselý\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder\\godotsharp\\4.0.0\\godotsharp.4.0.0.nupkg.sha512",
-    "C:\\Users\\Veselý\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder\\godotsharpeditor\\4.0.0\\godotsharpeditor.4.0.0.nupkg.sha512"
+    "C:\\Users\\tomas.vesely\\.nuget\\packages\\godot.sourcegenerators\\4.1.1\\godot.sourcegenerators.4.1.1.nupkg.sha512",
+    "C:\\Users\\tomas.vesely\\.nuget\\packages\\godotsharp\\4.1.1\\godotsharp.4.1.1.nupkg.sha512",
+    "C:\\Users\\tomas.vesely\\.nuget\\packages\\godotsharpeditor\\4.1.1\\godotsharpeditor.4.1.1.nupkg.sha512"
   ],
   "logs": []
 }

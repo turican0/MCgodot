@@ -3,6 +3,9 @@ using System;
 using System.Reflection;
 using static MeshInstance3D2;
 using System.Runtime.InteropServices;
+using System.Reflection.Metadata.Ecma335;
+using System.Linq;
+using static Godot.TextServer;
 
 [Tool]
 public partial class MeshInstance3D2 : MeshInstance3D
@@ -31,6 +34,12 @@ public partial class MeshInstance3D2 : MeshInstance3D
         public byte y;
     }
 
+    public struct axis_2du
+    {
+        public int x;
+        public int y;
+    }
+
     [StructLayout(LayoutKind.Explicit)]
     public struct uaxis_2d
     {
@@ -39,6 +48,7 @@ public partial class MeshInstance3D2 : MeshInstance3D
         [FieldOffset(0)]
         public ushort word;
     }
+
     struct type_E9C38_smalltit
     {
         public int x_0;
@@ -1155,10 +1165,413 @@ public partial class MeshInstance3D2 : MeshInstance3D
         public int dword0x27;
     }
 
+    struct type_x_D41A0_BYTEARRAY_4_struct
+    {
+        /*
+        //uint8_t harddisk_number;
 
+        //uint8_t setting_byte5_19;
+        uint32_t configDatSign_0;//x_D41A0_BYTEARRAY_4_struct.dwordindex_0
+        uint16_t langIndex_4;//x_D41A0_BYTEARRAY_4_struct.byteindex_4
+        uint16_t soundVolume_6;//x_D41A0_BYTEARRAY_4_struct.wordindex_6
+        uint16_t musicVolume_8;//x_D41A0_BYTEARRAY_4_struct.wordindex_8
+        uint8_t byteindex_10;//0xa//x_D41A0_BYTEARRAY_4_struct.byteindex_10//show help
+        int8_t brightness_11;//0xb//x_D41A0_BYTEARRAY_4_struct.byteindex_11
+        int8_t brightness_12;//0xc//x_D41A0_BYTEARRAY_4_struct.byteindex_12
+        int8_t brightness_13;//0xd//x_D41A0_BYTEARRAY_4_struct.byteindex_13
+        uint16_t wordindex_14;
+        uint32_t dwordindex_16;//0x10//x_D41A0_BYTEARRAY_4_struct.dwordindex_16
+        uint8_t stubb[2];
+        uint8_t setting_byte1_22;//x_D41A0_BYTEARRAY_4_struct.setting_byte1_22
+        int8_t setting_byte2_23;//0x17//x_D41A0_BYTEARRAY_4_struct.setting_byte2_23
+        uint8_t setting_byte3_24;//cheats? 0x20==free spell//x_D41A0_BYTEARRAY_4_struct.setting_byte3_24
+                                 //spell on - 0x20
+        uint8_t setting_byte4_25;//cheats? 0x1==Invincability 0x8==tester 0x40==music
+                                 //invincability - 1;
+        uint8_t byteindex_26 = 0;//x_D41A0_BYTEARRAY_4_struct.byteindex_26
+        uint8_t stubc[3];
+        uint8_t setting_30;//x_D41A0_BYTEARRAY_4_struct.setting_30
+        uint8_t stubd[3];
+        //FILE* moviemvidatfile_byte4_33;
+        uint8_t m_wHighSpeedSystem;
+        FILE* moviemvidatfile_byte4_35;
+        uint16_t moviemvinumber_byte4_39;//x_D41A0_BYTEARRAY_4_struct.moviemvinumber_byte4_39
+        uint8_t stube[2];*/
+        int levelnumber_43w;//x_D41A0_BYTEARRAY_4_struct.levelnumber_43
+                                 //uint8_t stubf[1];
+        /*uint16_t setting_45w;
+        uint8_t stubg[3];
+        int8_t byteindex_50;//0x32//x_D41A0_BYTEARRAY_4_struct.byteindex_50
+        uint8_t byteindex_51;//0x33//x_D41A0_BYTEARRAY_4_struct.byteindex_51
+        uint8_t byteindex_52;//0x34//x_D41A0_BYTEARRAY_4_struct.byteindex_52
+        uint8_t byteindex_53;//0x35//x_D41A0_BYTEARRAY_4_struct.byteindex_53
+        uint8_t stubh[3];
+        char player_name_57ar[32];
+        char savestring_89[32];
+        uint8_t byteindex_121[16];//0x79//x_D41A0_BYTEARRAY_4_struct.byteindex_121
+                                  //uint8_t byteindex_122;//0x7a//x_D41A0_BYTEARRAY_4_struct.byteindex_121[1]
+                                  //uint8_t byteindex_123;//0x7b//x_D41A0_BYTEARRAY_4_struct.byteindex_121[2]
+                                  //uint8_t byteindex_124;//0x7c//x_D41A0_BYTEARRAY_4_struct.byteindex_121[3]
+                                  //uint8_t byteindex_125;//0x7d//x_D41A0_BYTEARRAY_4_struct.byteindex_121[4]
+                                  //uint8_t byteindex_127;//0x7f//x_D41A0_BYTEARRAY_4_struct.byteindex_121[6]
+        uint8_t stubi[8];
+        char byteindex_145ar[32];//x_D41A0_BYTEARRAY_4_struct.byteindex_145ar
+
+        uint8_t byteindex_177;//0xb1//x_D41A0_BYTEARRAY_4_struct.byteindex_177
+        uint8_t speedIndex;//0xb2//x_D41A0_BYTEARRAY_4_struct.byteindex_178
+        uint8_t SelectedLangIndex;
+        uint8_t byteindex_180;//0xb4//x_D41A0_BYTEARRAY_4_struct.byteindex_180
+        uint8_t byteindex_181;//0xb5//x_D41A0_BYTEARRAY_4_struct.byteindex_181
+        uint8_t byteindex_183;//0xb7//x_D41A0_BYTEARRAY_4_struct.byteindex_183
+        uint16_t byteindex_184w;//0xb8//x_D41A0_BYTEARRAY_4_struct.byteindex_184
+                                //uint8_t stubj[1];
+        uint8_t byteindex_186;//0xba//x_D41A0_BYTEARRAY_4_struct.byteindex_186
+        uint8_t stubk[1];
+        uint32_t dwordindex_188;//x_D41A0_BYTEARRAY_4_struct.byteindex_188
+                                //uint8_t byteindex_189;//x_D41A0_BYTEARRAY_4_struct.byteindex_189
+                                //uint8_t byteindex_190;//x_D41A0_BYTEARRAY_4_struct.byteindex_190
+
+        //1(0x1)-help//2(0x2)-sound//3(0x4)-music//4(0x8)-speek//5(0x10)-fly//6(0x20)-bright//7(0x40)speed//8(0x80)screen
+        //9(0x100)-reflection//10(0x200)-sky//11(0x400)-shadows//12(0x800)-light/13(0x1000)-icons//14(0x2000)-transparency//15(0x4000)-flat	//16(0x8000)-resolution
+        //17(0x10000)-names
+
+        uint32_t dwordindex_192;//0xc0//x_D41A0_BYTEARRAY_4_struct.byteindex_192
+                                //uint8_t byteindex_193;//0xc1//x_D41A0_BYTEARRAY_4_struct.byteindex_193
+                                //uint8_t byteindex_194;//0xc2//x_D41A0_BYTEARRAY_4_struct.byteindex_194
+
+        //1(0x1)-help//2(0x2)-sound//3(0x4)-music//4(0x8)-speek//5(0x10)-fly//6(0x20)-bright//7(0x40)speed//8(0x80)screen
+        //9(0x100)-reflection//10(0x200)-sky//11(0x400)-shadows//12(0x800)-light/13(0x1000)-icons//14(0x2000)-transparency//15(0x4000)-flat	//16(0x8000)-resolution
+        //17(0x10000)-names
+
+        uint8_t byteindex_196;//0xc4//x_D41A0_BYTEARRAY_4_struct.byteindex_196
+        uint8_t stubl[3];
+        uint8_t transfer_rate_dwordindex_200;//0xc8//x_D41A0_BYTEARRAY_4_struct.transfer_rate_dwordindex_200
+        uint8_t stubm[3];
+        uint8_t byteindex_204;//0xCC//x_D41A0_BYTEARRAY_4_struct.byteindex_204
+        uint8_t byteindex_205;//0xCD//x_D41A0_BYTEARRAY_4_struct.byteindex_205
+        uint8_t byteindex_206;//0xce//x_D41A0_BYTEARRAY_4_struct.byteindex_206
+        uint8_t byteindex_207;//0xcf//x_D41A0_BYTEARRAY_4_struct.byteindex_207
+        uint8_t byteindex_208;//0xd0//x_D41A0_BYTEARRAY_4_struct.byteindex_208
+        uint8_t stubmm[1];
+        uint32_t byteindex_210d;//0xd2//x_D41A0_BYTEARRAY_4_struct.byteindex_210
+                                //uint8_t stubn[3];
+        uint16_t byteindex_214w;//0xd6//x_D41A0_BYTEARRAY_4_struct.byteindex_214
+                                //uint8_t stubo[1];
+        uint16_t isNetwork_216w;
+        //uint8_t stubp[1];
+        uint16_t byteindex_218w;//0xda//x_D41A0_BYTEARRAY_4_struct.byteindex_218
+                                //uint8_t stubq[1];
+
+        uint8_t byteindex_220;//0xdc//x_D41A0_BYTEARRAY_4_struct.byteindex_220
+        uint8_t byteindex_221ar[3];//0xe0//x_D41A0_BYTEARRAY_4_struct.byteindex_221ar
+        uint8_t byteindex_224;//0xe0//x_D41A0_BYTEARRAY_4_struct.byteindex_224
+        uint8_t byteindex_225;//0xe1//x_D41A0_BYTEARRAY_4_struct.byteindex_225
+        uint8_t* pointer_0xE2_heapbuffer_226;//x_D41A0_BYTEARRAY_4_struct.pointer_0xE2_heapbuffer_226
+        uint32_t dword_0xE6_heapsize_230;//x_D41A0_BYTEARRAY_4_struct.dword_0xE6_heapsize_230
+        uint8_t stubr[8];
+        type_index_242ar str_index_242ar;//0xf2//x_D41A0_BYTEARRAY_4_struct.byteindex_242ar
+                                         //uint8_t byteindex_246;//0xf6//x_D41A0_BYTEARRAY_4_struct.byteindex_242ar[4]
+                                         //uint8_t byteindex_250;//x_D41A0_BYTEARRAY_4_struct.byteindex_242ar[8]
+
+        type_str_0x2BDE byteindex_256ar;//0x100//x_D41A0_BYTEARRAY_4_struct.byteindex_256ar
+                                        //280=byteindex_256ar[24];//x_D41A0_BYTEARRAY_4_struct.byteindex_256ar[24]
+                                        //565=byteindex_256ar[309];//0x235//x_D41A0_BYTEARRAY_4_struct.byteindex_256ar[309]
+                                        //1865=byteindex_256ar[1609];//0x749//x_D41A0_BYTEARRAY_4_struct.byteindex_256ar[1609]
+                                        //end 2224
+
+        //uint8_t byteindex_2255ar[26];//0x100//x_D41A0_BYTEARRAY_4_struct.byteindex_2255ar
+        //type_2255ar str_2255ar;
+        //end 2281
+        //uint8_t stubs[9];
+        uint32_t dwordindex_2380;//0x94c//x_D41A0_BYTEARRAY_4_struct.dwordindex_2380
+        uint8_t stubt[4];
+        uint32_t dwordindex_2388;//0x954//x_D41A0_BYTEARRAY_4_struct.dwordindex_2388
+        uint32_t dwordindex_2392;//0x958//x_D41A0_BYTEARRAY_4_struct.dwordindex_2392
+
+        //uint8_t byteindex_8618;//0x21aa//x_D41A0_BYTEARRAY_4_struct.byteindex_8618
+        //uint8_t setting_38545;
+        uint8_t stubu[36000];
+        type_event_0x6E8E* dwordindex_38396;//0x95FC//x_D41A0_BYTEARRAY_4_struct.dwordindex_38396
+        uint8_t byteindex_38400;//0x9600//x_D41A0_BYTEARRAY_4_struct.byteindex_38400
+        uint8_t byteindex_38401;//0x9601//x_D41A0_BYTEARRAY_4_struct.byteindex_38401
+
+        uint8_t setting_38402;//0x9602//x_D41A0_BYTEARRAY_4_struct.setting_38402
+
+        type_event_0x6E8E* bytearray_38403x[30];//array 116//0x9603//x_D41A0_BYTEARRAY_4_struct.bytearray_38403
+        //bytearray_38419=bytearray_38403[16]//0x965b//x_D41A0_BYTEARRAY_4_struct.bytearray_38403[16]
+        //bytearray_38439=bytearray_38403[36]//0x965b//x_D41A0_BYTEARRAY_4_struct.bytearray_38403[36]
+        //bytearray_38403[88]//uint32_t dword_38491;//0x965b//x_D41A0_BYTEARRAY_4_struct.bytearray_38403[88]
+
+        //bytearray_38451=bytearray_38403[48]//0x965b//x_D41A0_BYTEARRAY_4_struct.bytearray_38403[48]
+        //bytearray_38455=bytearray_38403[52]//0x965b//x_D41A0_BYTEARRAY_4_struct.bytearray_38403[52]
+
+        //bytearray_38511=bytearray_38403[108]//0x965b//x_D41A0_BYTEARRAY_4_struct.bytearray_38403[108]
+        //bytearray_38515=bytearray_38403[112]//0x965b//x_D41A0_BYTEARRAY_4_struct.bytearray_38403[112]
+
+        //bytearray_38535=bytearray_38403[132]//0x965b//x_D41A0_BYTEARRAY_4_struct.bytearray_38403[132]
+
+        //endarray - dword_38519
+        type_event_0x6E8E* dword_38519;//0x9677//x_D41A0_BYTEARRAY_4_struct.dword_38519
+
+        type_event_0x6E8E* dword_38523;//0x967b//x_D41A0_BYTEARRAY_4_struct.dword_38523
+        type_event_0x6E8E* dword_38527;//0x967F//x_D41A0_BYTEARRAY_4_struct.dword_38527
+        type_event_0x6E8E* dword_38531;//0x9683//x_D41A0_BYTEARRAY_4_struct.dword_38531
+        type_event_0x6E8E* dword_38535;//x_D41A0_BYTEARRAY_4_struct.dword_38535
+        uint8_t stubv[5];
+        uint8_t byte_38544;//x_D41A0_BYTEARRAY_4_struct.byte_38544
+        uint8_t setting_38545;//0x9691//x_D41A0_BYTEARRAY_4_struct.setting_38545
+        uint8_t SelectedMenuItem_38546;//0x9692//x_D41A0_BYTEARRAY_4_struct.byte_38546
+        uint8_t stubw[44];
+        uint8_t byte_38591;//0x96BF//x_D41A0_BYTEARRAY_4_struct.byte_38591
+
+        //uint32_t dword_616432;*/
+    };
+
+    type_x_D41A0_BYTEARRAY_4_struct x_D41A0_BYTEARRAY_4_struct;
+
+    public enum MapType_t : byte
+    {
+        Day = 0,
+        Night = 1,
+        Cave = 2
+    }
+
+struct type_entity_0x30311
+    {//lenght 20
+    //uint8_t byte_0;//type_str_0x30310//type_str_0x30324
+    int type_0x30311;//type_str_0x30311//type_str_0x30325//1091
+                          //uint8_t byte_1;//type_str_0x30312//type_str_0x30326
+    int subtype_0x30311;//type_str_0x30313//type_str_0x30327//1091
+                            //uint8_t byte_4;//type_str_0x30314//type_str_0x30328
+                            //axis_3d axis3d_4;//type_str_0x30315//type_str_0x30329
+    axis_2du axis2d_4;
+    int DisId;// must be signed
+                  //uint8_t byte_5;//type_str_0x30316//type_str_0x3032a
+                  //uint16_t word_6;//type_str_0x30317//type_str_0x3032b
+                  //uint8_t byte_7;//type_str_0x30318//type_str_0x3032c
+                  //uint16_t word_8;//type_str_0x30319//type_str_0x3032d
+    int word_10;//type_str_0x3031b//type_str_0x3032f
+                     //uint8_t byte_11;//type_str_0x3031c//type_str_0x30330
+    int stageTag_12;//type_str_0x3031d//type_str_0x30331
+                        //uint8_t byte_13;//type_str_0x3031e//type_str_0x30332
+    int par1_14;//type_str_0x3031f//type_str_0x30333//1105
+                     //uint8_t byte_15;//type_str_0x30320//type_str_0x30334
+    int par2_16;//type_str_0x30321//type_str_0x30335
+                     //uint8_t byte_17;//type_str_0x30322//type_str_0x30336
+    int par3_18;//type_str_0x30323//type_str_0x30337
+                     //uint8_t byte_19;//type_str_0x30324//type_str_0x30338
+};
+
+struct type_str_0x360D2
+{//lenght 110 //word_0x360D2
+    int word_0x360D5;
+    int word_0x360D9;
+    int word_0x360DD;
+    int[] byte_0x360E1x;
+    int[] byte_0x360FBx;
+    int[] byte_0x36115x;
+    int word_0x3612F;
+}
+
+struct type_str_2FECE
+{//lenght 0x6604u
+    int word_2FECE;
+    int word_2FED0;
+    int byte_0x2FED2;//x_D41A0_BYTEARRAY_0[196306] // type of level graphics
+    int byte_0x2FED3;
+    MapType_t MapType;//x_D41A0_BYTEARRAY_0[196308]//GraphicsType
+    int word_0x2FED5;
+    int word_0x2FED7;
+    int[] player_0x2FED9;
+    int seed_0x2FEE5;//2FEE5//23
+    int offset_0x2FEE9;//2FEE9//27 //first seed position
+    int raise_0x2FEED;//2FEED//31 //first seed height
+    int gnarl_0x2FEF1;//2FEF1//35 //random seed
+    int river_0x2FEF5;//2FEF5//39
+    int lriver_0x2FEF9;//2FEF9//43
+    int source_0x2FEFD;//2FEFD//47
+    int snLin_0x2FF01;//2FF01//51
+    int snFlt_0x2FF05;//2FF05//55
+    int bhLin_0x2FF09;//2FF09//59
+    int bhFlt_0x2FF0D;//2FF0D//63
+    int rkSte_0x2FF11;//2FF11//67
+    type_entity_0x30311[] entity_0x30311;//end(next entity) - 0x360d1
+    int next_0x360D1;
+    type_str_0x360D2[] next_0x360D2;//lenght 110  /spells?
+    type_str_0x36442[] stages_0x36442;//stages(checkpoints)
+    type_str_0x3647Ac[] StageVars_0x3647A;//8x11
+};//compress level
+
+//----- (000533B0) --------------------------------------------------------
+char sub_533B0_decompress_levels(int a1, type_str_2FECE[] a2x)//2343b0
+    {
+        uint8_t* v2; // edi
+        FILE* levelsdatfile; // ebx
+        FILE* levelstabfile; // esi
+        int* v6; // eax
+        int v7; // edi
+                //char v8; // [esp+0h] [ebp-44h]
+        int v9; // [esp+40h] [ebp-4h]
+
+        v2 = (uint8_t*)x_DWORD_E9C38_smalltit;
+        if (a1 < 1000)
+        {
+            std::string levelDataPath = GetSubDirectoryFile(gameFolder, "CLEVELS", "LEVELS.DAT");
+            levelsdatfile = DataFileIO::CreateOrOpenFile(levelDataPath.c_str(), 512);
+            if (levelsdatfile == NULL)
+            {
+                levelDataPath = GetSubDirectoryFile(cdFolder, "LEVELS", "LEVELS.DAT");
+                levelsdatfile = DataFileIO::CreateOrOpenFile(levelDataPath.c_str(), 512);
+                if (levelsdatfile == NULL)
+                    return 0;
+            }
+            levelDataPath = GetSubDirectoryFile(gameFolder, "CLEVELS", "LEVELS.TAB");
+            levelstabfile = DataFileIO::CreateOrOpenFile(levelDataPath.c_str(), 512);
+            if (levelstabfile == NULL)
+            {
+                levelDataPath = GetSubDirectoryFile(cdFolder, "LEVELS", "LEVELS.TAB");
+                levelstabfile = DataFileIO::CreateOrOpenFile(levelDataPath.c_str(), 512);
+                if (levelstabfile == NULL)
+                {
+                    DataFileIO::Close(levelsdatfile);
+                    return 0;
+                }
+            }
+            DataFileIO::Read(levelstabfile, v2, 4000);
+            v6 = (int*)(v2 + 4 * a1);
+            v7 = v6[0];
+            v9 = v6[1] - v6[0];
+            DataFileIO::Close(levelstabfile);
+
+            if (DataFileIO::FileLengthBytes(levelsdatfile))
+            {
+                DataFileIO::Seek(levelsdatfile, v7, 0);
+                DataFileIO::Read(levelsdatfile, (uint8_t*)x_DWORD_E9C38_smalltit, v9);
+                if (DataFileIO::Decompress((uint8_t*)x_DWORD_E9C38_smalltit, (uint8_t*)x_DWORD_E9C38_smalltit) < 0)
+                {
+                    myprintf("ERROR decompressing LEVELS.DAT\n");
+                    return 0;
+                }
+                /*
+                qmemcpy(a2x, (type_str_2FECE*)(const void*)x_DWORD_E9C38_smalltit, sizeof(type_str_2FECE));//0x6604
+                memset((type_str_2FECE*)x_DWORD_E9C38_smalltit, 0, sizeof(type_str_2FECE));//0x6604
+                */
+                type_shadow_str_2FECE shadow_a2x;
+                qmemcpy(&shadow_a2x, (type_shadow_str_2FECE*)(const void*)x_DWORD_E9C38_smalltit, sizeof(type_shadow_str_2FECE));//0x6604
+                memset((type_shadow_str_2FECE*)x_DWORD_E9C38_smalltit, 0, sizeof(type_shadow_str_2FECE));//0x6604
+                Convert_from_shadow_str_2FECE(&shadow_a2x, a2x);
+                //type_shadow_str_2FECE
+            }
+            DataFileIO::Close(levelsdatfile);
+
+            //if exist editor generated level
+#if !defined(IS_EDITOR)
+            if (CommandLineParams.DoLoadEditedLevel())
+            {
+                if (config_LOAD_EDITED_LEVEL)
+                {
+                    char path2[512];
+                    FixDir(path2, (char*)"../remc2/editor/Debug/testsave.sav");
+                    FILE* file = fopen(path2, "rb");
+                    if (file)
+                    {
+                        type_shadow_str_2FECE shadow_2FECE;
+                        fread(&shadow_2FECE, sizeof(type_shadow_str_2FECE), 1, file);
+                        /*for (int i = 0; i < sizeof(type_shadow_str_2FECE); i++)
+							if(((int8_t*)&shadow_2FECE)[i]!=((int8_t*)&D41A0_BYTESTR_0.terrain_2FECE)[i])
+								allert_error();*/
+                        Convert_from_shadow_str_2FECE(&shadow_2FECE, &D41A0_0.terrain_2FECE);
+                    }
+                    fclose(file);
+                }
+            }
+#endif //!IS_EDITOR
+            //if exist editor generated level
+
+            sub_56C00_sound_proc2(a2x);
+            sub_53590(a2x);
+        }
+        return 1;
+    }
+
+    void sub_56A30_init_game_level(int a1)//237a30
+    {
+        //CreateIndexes_6EB90(&filearray_2aa18c[filearrayindex_BUILD00DATTAB]);//24fb90 adress 0x23ca2e
+        //ClearSettings_567C0();
+        sub_533B0_decompress_levels(x_D41A0_BYTEARRAY_4_struct.levelnumber_43w, &D41A0_0.terrain_2FECE);        
+        
+        /*if (!(x_D41A0_BYTEARRAY_4_struct.setting_byte1_22 & 0x10))
+            D41A0_0.word_0xe = D41A0_0.terrain_2FECE.word_0x2FED7;
+        PrintTextMessage_70910((char*)"Generate map\0");
+        if (!(x_D41A0_BYTEARRAY_4_struct.setting_byte1_22 & 4))
+            GenerateLevelMap_43830(&D41A0_0.terrain_2FECE);
+        sub_49F30();//prepare events pointers
+                    //237B05
+        if (CommandLineParams.DoDebugSequences())
+        {
+            add_compare(0x237B05, CommandLineParams.DoDebugafterload());
+        }
+        PrintTextMessage_70910((char*)"Generate features\0");
+        if (!(x_D41A0_BYTEARRAY_4_struct.setting_byte1_22 & 4))
+            sub_49270_generate_level_features(&D41A0_0.terrain_2FECE);
+        PrintTextMessage_70910((char*)"Initialise Models\0");
+        memset(&x_WORD_EB398ar, 0, 6);
+        sub_49F90();
+        //adress 237B55
+        if (CommandLineParams.DoDebugSequences())
+        {
+            add_compare(0x237B55, CommandLineParams.DoDebugafterload());
+        }
+        D41A0_0.dword_0x11e6 = -1;
+        sub_71A70_setTmaps(D41A0_0.terrain_2FECE.MapType);
+        //adress 237b75
+        if (!(x_D41A0_BYTEARRAY_4_struct.setting_byte1_22 & 4))
+        {
+            InitStages_58940();
+            InitStageVars_11EE0();
+            Init0x3664C_84790();
+        }
+        //adress 237BB0
+        if (CommandLineParams.DoDebugSequences())
+        {
+            add_compare(0x237BB0, CommandLineParams.DoDebugafterload());
+        }
+        if (CommandLineParams.DoSetObjective())
+        {
+            // FIXME: D41A0_BYTESTR_0 undeclared
+            // D41A0_BYTESTR_0.struct_0x3659C[0].substr_3659C.stage_0x3659F[0] = 2;
+            // D41A0_BYTESTR_0.struct_0x3659C[0].substr_3659C.stage_0x3659F[1] = 2;
+            // D41A0_BYTESTR_0.struct_0x3659C[0].substr_3659C.stage_0x3659F[2] = 2;
+            // D41A0_BYTESTR_0.struct_0x3659C[0].substr_3659C.stage_0x3659F[3] = 2;
+            // //D41A0_BYTESTR_0.struct_0x3659C[0].substr_3659C.stage_0x3659F[4] = 2;
+            // D41A0_BYTESTR_0.struct_0x3659C[0].substr_3659C.array_0x3659C_byte[1] = 4;
+            // //D41A0_BYTESTR_0.struct_0x3654C[0].str_3654E_word2 = 40;
+            // //D41A0_BYTESTR_0.struct_0x3654C[0].str_36550_word4 = 40;
+        }
+        sub_4A1E0(0, 1);
+        //adress 237bb9
+        if (CommandLineParams.DoDebugSequences())
+        {
+            add_compare(0x237bb9, CommandLineParams.DoDebugafterload());
+        }
+        soundActive_E3799 = temp_x_BYTE_E3799_sound_card;
+        sub_53160();
+        //adress 237bc7
+        if (CommandLineParams.DoDebugSequences())
+        {
+            add_compare(0x237BC7, CommandLineParams.DoDebugafterload());
+        }
+        //adress 237beb
+        sub_60F00();
+        if (CommandLineParams.DoDebugSequences())
+        {
+            add_compare(0x237BF0, CommandLineParams.DoDebugafterload());
+        }*/
+    }
 
     public override void _Ready()
     {
+        sub_56A30_init_game_level(0);
         gen_mesh();
     }
 
@@ -1167,6 +1580,7 @@ public partial class MeshInstance3D2 : MeshInstance3D
     {
         if (update)
         {
+            sub_56A30_init_game_level(0);
             gen_mesh();
             update = true;
         }
@@ -1189,6 +1603,12 @@ public partial class MeshInstance3D2 : MeshInstance3D
         ArrayMesh a_mesh = new ArrayMesh();
 
         SurfaceTool st = new SurfaceTool();
+
+        int terrainSizeX = 8;
+        int terrainSizeY = 19;
+
+        float terrainSizeXParc = 1 / (float)terrainSizeX;
+        float terrainSizeYParc = 1 / (float)terrainSizeY;
         /*
         Vector3 v1 = new Vector3(0, 0, 0);
         Vector3 v2 = new Vector3(1, 0, 0);
@@ -1221,8 +1641,8 @@ public partial class MeshInstance3D2 : MeshInstance3D
 
         st.Begin(Mesh.PrimitiveType.Triangles);
 
-        const int textColumns = 5;
-        const int textRows = 5;
+        const int textColumns = 50;
+        const int textRows = 50;
 
         //float[,] floatArray = new float[textColumns, textRows];
 
@@ -1344,32 +1764,36 @@ public partial class MeshInstance3D2 : MeshInstance3D
                 //}
                 //}
 
+                Random random = new Random();
+                int tileIndexX = mapTerrainType_CC1E0_CC1D0[i + j * 256] % terrainSizeX;//;random.Next(0, 11);
+                int tileIndexY = mapTerrainType_CC1E0_CC1D0[i + j * 256] / terrainSizeX;//;random.Next(0, 11);
+
                 if ((Str_E9C38_smalltit[index].triangleFeatures_38 & 1) == 0)
                 {
                     Vector3 v1x = new Vector3(i + 0, 0.003f * mapHeightmap_11B4E0[i + 0, j + 0], j + 0);
                     Vector3 v2x = new Vector3(i + 1, 0.003f * mapHeightmap_11B4E0[i + 1, j + 0], j + 0);
                     Vector3 v3x = new Vector3(i + 1, 0.003f * mapHeightmap_11B4E0[i + 1, j + 1], j + 1);
 
-                    st.SetUV(new Vector2(0, 0));
+                    st.SetUV(new Vector2(terrainSizeXParc * tileIndexX, terrainSizeYParc * tileIndexY));
                     st.AddVertex(v1x);
 
-                    st.SetUV(new Vector2(0, 1));
+                    st.SetUV(new Vector2(terrainSizeXParc * tileIndexX, terrainSizeYParc * (tileIndexY + 1)));
                     st.AddVertex(v2x);
 
-                    st.SetUV(new Vector2(1, 1));
+                    st.SetUV(new Vector2(terrainSizeXParc * (tileIndexX + 1), terrainSizeYParc * (tileIndexY + 1)));
                     st.AddVertex(v3x);
 
                     Vector3 v1y = new Vector3(i + 0, 0.003f * mapHeightmap_11B4E0[i + 0, j + 0], j + 0);
                     Vector3 v2y = new Vector3(i + 1, 0.003f * mapHeightmap_11B4E0[i + 1, j + 1], j + 1);
                     Vector3 v3y = new Vector3(i + 0, 0.003f * mapHeightmap_11B4E0[i + 0, j + 1], j + 1);
 
-                    st.SetUV(new Vector2(0, 0));
+                    st.SetUV(new Vector2(terrainSizeXParc * tileIndexX, terrainSizeYParc * tileIndexY));
                     st.AddVertex(v1y);
 
-                    st.SetUV(new Vector2(0.1f, 0.1f));
+                    st.SetUV(new Vector2(terrainSizeXParc * (tileIndexX + 1), terrainSizeYParc * (tileIndexY + 1)));
                     st.AddVertex(v2y);
 
-                    st.SetUV(new Vector2(0, 0.1f));
+                    st.SetUV(new Vector2(terrainSizeXParc * tileIndexX, terrainSizeYParc * (tileIndexY + 1)));
                     st.AddVertex(v3y);
                 }
                 else
@@ -1378,26 +1802,26 @@ public partial class MeshInstance3D2 : MeshInstance3D
                     Vector3 v2x = new Vector3(i + 0, 0.003f * mapHeightmap_11B4E0[i + 0, j + 1], j + 1);
                     Vector3 v3x = new Vector3(i + 0, 0.003f * mapHeightmap_11B4E0[i + 0, j + 0], j + 0);
 
-                    st.SetUV(new Vector2(0.1f, 0));
+                    st.SetUV(new Vector2(terrainSizeXParc * (tileIndexX + 1), terrainSizeYParc * tileIndexY));
                     st.AddVertex(v1x);
 
-                    st.SetUV(new Vector2(0, 0.1f));
+                    st.SetUV(new Vector2(terrainSizeXParc * tileIndexX, terrainSizeYParc * (tileIndexY + 1)));
                     st.AddVertex(v2x);
 
-                    st.SetUV(new Vector2(0, 0));
+                    st.SetUV(new Vector2(terrainSizeXParc * tileIndexX, terrainSizeYParc * tileIndexY));
                     st.AddVertex(v3x);
 
                     Vector3 v1y = new Vector3(i + 1, 0.003f * mapHeightmap_11B4E0[i + 1, j + 0], j + 0);
                     Vector3 v2y = new Vector3(i + 1, 0.003f * mapHeightmap_11B4E0[i + 1, j + 1], j + 1);
                     Vector3 v3y = new Vector3(i + 0, 0.003f * mapHeightmap_11B4E0[i + 0, j + 1], j + 1);
 
-                    st.SetUV(new Vector2(1, 0));
+                    st.SetUV(new Vector2(terrainSizeXParc * (tileIndexX + 1), terrainSizeYParc * tileIndexY));
                     st.AddVertex(v1y);
 
-                    st.SetUV(new Vector2(1, 1));
+                    st.SetUV(new Vector2(terrainSizeXParc * (tileIndexX + 1), terrainSizeYParc * (tileIndexY + 1)));
                     st.AddVertex(v2y);
 
-                    st.SetUV(new Vector2(0, 1));
+                    st.SetUV(new Vector2(terrainSizeXParc * tileIndexX, terrainSizeYParc * (tileIndexY + 1)));
                     st.AddVertex(v3y);
                 }
                 index++;

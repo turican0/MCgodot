@@ -1,25 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\prenos\\mcgodot\\Squash the Creeps (3D).csproj": {}
+    "C:\\PRENOS\\MCGODOT\\Squash the Creeps (3D).csproj": {}
   },
   "projects": {
-    "C:\\prenos\\mcgodot\\Squash the Creeps (3D).csproj": {
+    "C:\\PRENOS\\MCGODOT\\Squash the Creeps (3D).csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\prenos\\mcgodot\\Squash the Creeps (3D).csproj",
+        "projectUniqueName": "C:\\PRENOS\\MCGODOT\\Squash the Creeps (3D).csproj",
         "projectName": "Squash the Creeps (3D)",
-        "projectPath": "C:\\prenos\\mcgodot\\Squash the Creeps (3D).csproj",
-        "packagesPath": "C:\\Users\\Veselý\\.nuget\\packages\\",
-        "outputPath": "C:\\prenos\\mcgodot\\.godot\\mono\\temp\\obj\\",
+        "projectPath": "C:\\PRENOS\\MCGODOT\\Squash the Creeps (3D).csproj",
+        "packagesPath": "C:\\Users\\tomas.vesely\\.nuget\\packages\\",
+        "outputPath": "C:\\PRENOS\\MCGODOT\\.godot\\mono\\temp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Users\\Veselý\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder",
+          "C:\\Users\\tomas.vesely\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Veselý\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Users\\Veselý\\AppData\\Roaming\\NuGet\\config\\Godot.Offline.Config",
+          "C:\\Users\\tomas.vesely\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\tomas.vesely\\AppData\\Roaming\\NuGet\\config\\Godot.Offline.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -47,15 +47,15 @@
           "dependencies": {
             "Godot.SourceGenerators": {
               "target": "Package",
-              "version": "[4.0.0, )"
+              "version": "[4.1.1, )"
             },
             "GodotSharp": {
               "target": "Package",
-              "version": "[4.0.0, )"
+              "version": "[4.1.1, )"
             },
             "GodotSharpEditor": {
               "target": "Package",
-              "version": "[4.0.0, )"
+              "version": "[4.1.1, )"
             }
           },
           "imports": [
@@ -74,7 +74,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }
